@@ -123,3 +123,15 @@ ul {
     justify-content: space-around;
     align-items: center;
 }
+
+.modif button {
+    width: 100px;
+    height: 40px;
+    margin: 0px 10px;
+
+}
+
+.modif select {
+    width: 90px;
+    height: 40px;
+}

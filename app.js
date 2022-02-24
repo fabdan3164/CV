@@ -63,7 +63,7 @@ let langues = {
 };
 
 let deletskills = {
-    template: `<div v-if="skills.length > 0 ">
+    template: `<div class="flex" v-if="skills.length > 0 ">
                 <select id="supcomp">
                     <option v-for="skill of skills">{{skill}}</option>
                 </select>
@@ -88,6 +88,33 @@ let deletskills = {
     }
 };
 
+let deletlangue = {
+
+    template: `<div class="flex" v-if="langues.length > 0 ">
+                <select id="suplangues">
+                    <option v-for="langue of langues">{{langue}}</option>
+                </select>
+                <button v-on:click="delet_selection">Supprimer Langue</button>
+                </div>`,
+    props: ['langues'],
+
+    methods: {
+
+        delet_selection: function() {
+            var local_Storage = JSON.parse(localStorage.getItem('CV'))
+            var selected_langues =document.getElementById("suplangues").value
+            
+            for(let i = 0; i <= local_Storage.langues.length ; i++  )
+            if ( local_Storage.langues[i] === selected_langues ) 
+            
+            local_Storage.langues.splice(i,1)
+            localStorage.setItem('CV', JSON.stringify(local_Storage))
+            location.reload();
+                ;
+        },
+    }
+};
+
 let cv = new Vue({
     el: '#cv',
     components: {
@@ -96,7 +123,9 @@ let cv = new Vue({
         'professionnelles': professionnelles,
         'skills': skills,
         'langues': langues,
-        'deletskills': deletskills
+        'deletskills': deletskills,
+        'deletlangue': deletlangue,
+        
     },
     data: {
         prenom: null,

@@ -143,8 +143,11 @@
 
         <h2 class="border_top">Enregistrer le CV</h2>   
         <div class="modif">
+            
         <button v-on:click="saveinfo">Enregistrer</button>
         <button v-on:click="deletStorage">Supprimer</button>
+        
+        <deletlangue :langues="langues"></deletlangue>
         <deletskills :skills="skills"></deletskills>
     </div>
         <div id="cvmodel">
