@@ -19,14 +19,17 @@ let info = {
 };
 
 let formations = {
-    template: `<div >
+    template: `
+            <div>
                 <h2> Formations </h2>
                 <div v-for="formation of formations" class="flexleft">
-                
-                <div class="diplome"> <div class="circle"></div> <h5>{{formation.niveaux}} - {{formation.formation}}</h5></div>
-                <p >{{formation.dateFormationDebut}} - {{formation.dateFormationFin}} : {{formation.etablissements}} </p>
+                    <div class="diplome"> 
+                        <div class="circle"></div> 
+                        <h5>{{formation.niveaux}} - {{formation.formation}}</h5>
+                    </div>
+                    <p >{{formation.dateFormationDebut}} - {{formation.dateFormationFin}} : {{formation.etablissements}} </p>
                 </div>
-                </div>`,
+            </div>`,
     props: ['formations']
 };
 
@@ -73,17 +76,16 @@ let deletskills = {
 
     methods: {
 
-        delet_selection: function() {
+        delet_selection: function () {
             var local_Storage = JSON.parse(localStorage.getItem('CV'))
-            var selected_comp  =document.getElementById("supcomp").value
-            
-            for(let i = 0; i <= local_Storage.skills.length ; i++  )
-            if ( local_Storage.skills[i] === selected_comp ) 
-            
-            local_Storage.skills.splice(i,1)
+            var selected_comp = document.getElementById("supcomp").value
+
+            for (let i = 0; i <= local_Storage.skills.length; i++)
+                if (local_Storage.skills[i] === selected_comp)
+
+                    local_Storage.skills.splice(i, 1)
             localStorage.setItem('CV', JSON.stringify(local_Storage))
             location.reload();
-                ;
         },
     }
 };
@@ -100,17 +102,19 @@ let deletlangue = {
 
     methods: {
 
-        delet_selection: function() {
+        delet_selection: function () {
             var local_Storage = JSON.parse(localStorage.getItem('CV'))
-            var selected_langues =document.getElementById("suplangues").value
-            
-            for(let i = 0; i <= local_Storage.langues.length ; i++  )
-            if ( local_Storage.langues[i] === selected_langues ) 
-            
-            local_Storage.langues.splice(i,1)
+            var selected_langues = document.getElementById("suplangues").value
+
+            for (let i = 0; i <= local_Storage.langues.length; i++) {
+                if (local_Storage.langues[i] === selected_langues) {
+                    local_Storage.langues.splice(i, 1)
+                }
+            }
+
+
             localStorage.setItem('CV', JSON.stringify(local_Storage))
-            location.reload();
-                ;
+            location.reload();;
         },
     }
 };
@@ -125,10 +129,10 @@ let cv = new Vue({
         'langues': langues,
         'deletskills': deletskills,
         'deletlangue': deletlangue,
-        
+
     },
     data: {
-        prenom: null,
+        prenom: '',
         nom: null,
         date: null,
         adresse: null,
@@ -213,6 +217,19 @@ let cv = new Vue({
         deletStorage: function () {
             localStorage.clear();
             location.reload();
-        }
-    }
+        },
+        changeColor: function () {
+            let border = document.getElementById("left")
+            return border.style.backgroundColor = document.getElementById("bordercolor").value
+        },
+
+        printCv: function () {
+                window.print();
+        },
+
+    },
+
+    computed: {
+
+    },
 }, );

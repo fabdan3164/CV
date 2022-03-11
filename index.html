@@ -8,148 +8,153 @@
     <meta charset="UTF-8">
 
     <script src="https://kit.fontawesome.com/c3eff93610.js" crossorigin="anonymous"></script>
-
+    <script src="app.js" defer></script>
     <title>Titre du document</title>
 
 </head>
 
 <body>
     <div class="container" id="cv">
-        <h1 >Application CV</h1>
+        <div id="forms">
+            <h1>Application CV</h1>
 
-        <h2 class="border_top">Données personnelle </h2>
-        <div class="flex">
-            <div>
-                <label for="nom">Nom</label>
-                <input v-model="nom" type="text" id="nom">
-            </div>
-
-            <div>
-                <label for="prenom">Prénom</label>
-                <input v-model="prenom" type="text" id="prenom">
-            </div>
-
-            <div>
-                <label for="date">Date de naissance</label>
-                <input v-model="date" type="date" id="date">
-            </div>
-
-            <div>
-                <label for="adresse">Adresse</label>
-                <input v-model="adresse" type="adresse" id="adresse">
-            </div>
-
-            <div>
-                <label for="email">Email:</label>
-                <input v-model="email" type="email" id="email" pattern=".+@globex\.com">
-            </div>
-
-            <div>
-                <label for="phone">Téléphone:</label>
-                <input v-model="phone" type="tel" id="phone">
-            </div>
-
-            <div>
-                <label for="Voiture">Voiture : </label>
-                <label for="oui">Oui</label>
-                <input id="oui" v-model="voiture" type="radio" :value="true">
-                <label for="non">Non</label>
-                <input non="non" v-model="voiture" type="radio" :value="false">
-            </div>
-            <button v-on:click="info_function">Ajouter</button>
-        </div>
-
-
-        <h2 class="border_top">Formation </h2>
-        <div class="flex">
-
-            <div>
-                <label for="formation">Formation</label>
-                <input type="text" id="formation">
-            </div>
-
-            <div>
-                <label for="etablissement">Établissement</label>
-                <input type="text" id="etablissement">
-            </div>
-
-            <div>
-                <label for="dateFormationDebut">De </label>
-                <input type="date" id="dateFormationDebut">
-            </div>
-
-            <div>
-                <label for="dateFormationFin">À </label>
-                <input type="date" id="dateFormationFin">
-            </div>
-
-            <div>
-                <label for="niveau">Niveau obtenu</label>
-                <select id="niveau">
-                    <option value="BAC">BAC</option>
-                    <option value="BAC+2">BAC+2</option>
-                    <option value="BAC+3">BAC+3</option>
-                    <option value="BAC+5">BAC+5</option>
-                </select>
-            </div>
-
-            <button v-on:click="formation1">Ajouter</button>
-        </div>
-
-        <h2 class="border_top">Expériences Professionnelles </h2>
-        <div class="flex">
-            <div>
-                <div>
-                    <label for="experience">Poste</label>
-                    <input type="text" id="experience">
-                </div>
-
-                <div>
-                    <label for="dateExperienceDebut">De </label>
-                    <input type="date" id="dateExperienceDebut">
-                </div>
-
-                <div>
-                    <label for="dateExperienceFin">À </label>
-                    <input type="date" id="dateExperienceFin">
-                </div>
-            </div>
+            <h2 class="border_top">Données personnelle </h2>
             <div class="flex">
-                <label for="descriptionexp">Description</label>
-                <textarea id="descriptionexp" rows="2" cols="45"> </textarea>
+                <div>
+                    <label for="nom">Nom</label>
+                    <input v-model="nom" type="text" id="nom">
+                </div>
+
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input v-model="prenom" type="text" id="prenom">
+                </div>
+
+                <div>
+                    <label for="date">Date de naissance</label>
+                    <input v-model="date" type="date" id="date">
+                </div>
+
+                <div>
+                    <label for="adresse">Adresse</label>
+                    <input v-model="adresse" type="adresse" id="adresse">
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input v-model="email" type="email" id="email" pattern=".+@globex\.com">
+                </div>
+
+                <div>
+                    <label for="phone">Téléphone:</label>
+                    <input v-model="phone" type="tel" id="phone">
+                </div>
+
+                <div>
+                    <label for="Voiture">Voiture : </label>
+                    <label for="oui">Oui</label>
+                    <input id="oui" v-model="voiture" type="radio" :value="true">
+                    <label for="non">Non</label>
+                    <input non="non" v-model="voiture" type="radio" :value="false">
+                </div>
+                <button v-on:click="info_function">Ajouter</button>
             </div>
-            <button v-on:click="experiencepro">Ajouter</button>
+
+
+            <h2 class="border_top">Formation </h2>
+            <div class="flex">
+
+                <div>
+                    <label for="formation">Formation</label>
+                    <input type="text" id="formation">
+                </div>
+
+                <div>
+                    <label for="etablissement">Établissement</label>
+                    <input type="text" id="etablissement">
+                </div>
+
+                <div>
+                    <label for="dateFormationDebut">De </label>
+                    <input type="date" id="dateFormationDebut">
+                </div>
+
+                <div>
+                    <label for="dateFormationFin">À </label>
+                    <input type="date" id="dateFormationFin">
+                </div>
+
+                <div>
+                    <label for="niveau">Niveau obtenu</label>
+                    <select id="niveau">
+                        <option value="BAC">BAC</option>
+                        <option value="BAC+2">BAC+2</option>
+                        <option value="BAC+3">BAC+3</option>
+                        <option value="BAC+5">BAC+5</option>
+                    </select>
+                </div>
+
+                <button @click="formation1">Ajouter</button>
+            </div>
+
+            <h2 class="border_top">Expériences Professionnelles </h2>
+            <div class="flex">
+                <div>
+                    <div>
+                        <label for="experience">Poste</label>
+                        <input type="text" id="experience">
+                    </div>
+
+                    <div>
+                        <label for="dateExperienceDebut">De </label>
+                        <input type="date" id="dateExperienceDebut">
+                    </div>
+
+                    <div>
+                        <label for="dateExperienceFin">À </label>
+                        <input type="date" id="dateExperienceFin">
+                    </div>
+                </div>
+                <div class="flex">
+                    <label for="descriptionexp">Description</label>
+                    <textarea id="descriptionexp" rows="2" cols="45"> </textarea>
+                </div>
+                <button v-on:click="experiencepro">Ajouter</button>
+            </div>
+
+
+            <div class="flex">
+
+                <div>
+                    <h2 class="border_top">Compétences </h2>
+                    <label for="competence">Ajouter une Compétence</label>
+                    <input type="text" id="competence">
+                    <button v-on:click="competence_function">Ajouter</button>
+                </div>
+
+                <div>
+                    <h2 class="border_top">Langues </h2>
+                    <label for="Langue">Ajouter une Langue</label>
+                    <input type="text" id="langue">
+                    <button v-on:click="langue_function">Ajouter</button>
+                </div>
+
+            </div>
+
+
+            <h2 class="border_top">Enregistrer le CV</h2>
+            <div class="modif">
+
+                <button v-on:click="saveinfo">Enregistrer</button>
+                <button v-on:click="deletStorage">Supprimer</button>
+                <button v-on:click="printCv()">Imprimer</button>
+                <input v-on:change="changeColor" id="bordercolor" type="color">
+
+
+                <deletlangue :langues="langues"></deletlangue>
+                <deletskills :skills="skills"></deletskills>
+            </div>
         </div>
-
-
-        <div class="flex">
-
-            <div>
-                <h2 class="border_top">Compétences </h2>
-                <label for="competence">Ajouter une Compétence</label>
-                <input type="text" id="competence">
-                <button v-on:click="competence_function">Ajouter</button>
-            </div>
-
-            <div>
-                <h2 class="border_top">Langues </h2>
-                <label for="Langue">Ajouter une Langue</label>
-                <input type="text" id="langue">
-                <button v-on:click="langue_function">Ajouter</button>
-            </div>
-
-        </div>
-
-
-        <h2 class="border_top">Enregistrer le CV</h2>   
-        <div class="modif">
-            
-        <button v-on:click="saveinfo">Enregistrer</button>
-        <button v-on:click="deletStorage">Supprimer</button>
-        
-        <deletlangue :langues="langues"></deletlangue>
-        <deletskills :skills="skills"></deletskills>
-    </div>
         <div id="cvmodel">
 
             <div id="left">
@@ -166,7 +171,7 @@
 
         </div>
     </div>
-    <script src="app.js"></script>
+
 </body>
 
 </html>

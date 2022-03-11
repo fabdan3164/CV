@@ -135,3 +135,7 @@ ul {
     width: 90px;
     height: 40px;
 }
+
+@media print {
+    #forms {display: none;}
+}
